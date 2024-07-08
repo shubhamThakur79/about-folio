@@ -21,7 +21,7 @@ const container = (delay) => ({
 const Hero = () => {
 
     return (
-        <div className="mt-[90px] border-b bg-[#ffffff1e] pt-[70px]  h-[110vh] lg:h-[80vh] border-neutral-400  lg:mb-35">
+        <div className="mt-[90px] border-b bg-[#ffffff1e] pt-[70px] mb-8 h-[95vh] lg:h-[80vh] border-neutral-400  lg:mb-35">
             <div className="flex flex-wrap">
                 <div className="w-full  md:w-1/2 lg:w-1/2">
                     <div className='w-full  pb-3 lg:hidden shadow-lg'>
@@ -68,8 +68,8 @@ const Hero = () => {
             <motion.div initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }} 
             transition={{ duration: 1, delay: 1.3 }}
-             className='flex justify-end lg:justify-start lg:mt-[-305px] mt-[-300px] sticky top-0'>
-            <a target='_blank' className='lg:py-4 lg:text-xl lg:px-7 py-4 px-12 mr-[30px] text-[22px] hover:text-black bg-gradient-to-r from-pink-400  text-white rounded hover:bg-red-500 focus:bg-green-400 to-purple-500   bg-transparent' href="/Resume.pdf">
+             className='flex  justify-end lg:justify-start lg:mt-[-307px] mt-[-300px] sticky top-0'>
+            <a target='_blank' className='lg:py-4 lg:text-xl lg:px-8 py-4 px-[70px] m-auto lg:m-0 text-[22px] font-semibold hover:text-black bg-gradient-to-r from-pink-400  text-white rounded hover:bg-red-500 focus:bg-green-400 to-purple-500   bg-transparent' href="/Resume.pdf">
                 Get Resume
             </a>
         </motion.div>
