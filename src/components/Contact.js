@@ -17,7 +17,7 @@ const Contact = () => {
         <br />
         <a className='flex gap-4 justify-center items-center text-2xl hover:text-blue-800' href="tel:"><FaPhoneVolume className='text-green-600 ' />  7876314359</a>
    
-    <a className='text-right underline ml-[370px] lg:ml-[990px] mb-[-50px] lg:mb-[-50px]' href="#">Go To Top</a>
+    <a className='text-right underline ml-[300px] lg:ml-[990px] mb-[-50px] lg:mb-[-50px]' href="#">Go To Top</a>
     </motion.div>
     </>
   
