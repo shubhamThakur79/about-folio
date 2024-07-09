@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const About = () => {
     return (
-        <div className="border-b border-zinc-300 bg-[#ffffff1e] border-neutral-400">
+        <div className="border-b text-center bg-[#ffffff1e] border-neutral-400">
             <motion.h1 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: -100 }}
                 transition={{ duration: 1.5 }}
@@ -23,7 +23,7 @@ const About = () => {
                 >
                     <div>
                         <img
-                            className='lg:shadow-3xl h-[350px] w-auto m-auto lg:mt-[-65px] mt-[0px] object-cover shadow-md shadow-slate-950 rounded-tr-full rounded-bl-full rounded-br-full rounded-tl-full lg:rounded-br-[150px] lg:rounded-bl-[150px]'
+                            className='lg:shadow-3xl lg:h-[350px] h-[290px] w-[290px] mt-[-50px] lg:w-auto m-auto lg:mt-[-65px] rounded-tr-[100px] rounded-tl-[100px] object-cover lg:object-cover shadow-md shadow-slate-950 lg:rounded-tr-full   lg:rounded-tl-full lg:rounded-br-[150px] lg:rounded-bl-[150px]'
                             src="/about.jpg"
                             alt="About"
                         />
