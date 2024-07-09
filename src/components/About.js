@@ -23,7 +23,7 @@ const About = () => {
                 >
                     <div>
                         <img
-                            className='lg:shadow-3xl lg:h-[350px] h-[290px] w-[290px] mt-[-50px] lg:w-auto m-auto lg:mt-[-65px] rounded-tr-[100px] rounded-tl-[100px] object-cover lg:object-cover shadow-md shadow-slate-950 lg:rounded-tr-full   lg:rounded-tl-full lg:rounded-br-[150px] lg:rounded-bl-[150px]'
+                            className='lg:shadow-3xl lg:h-[350px] h-[370px] w-[300px] mt-[-30px] lg:w-auto m-auto lg:mt-[-65px] rounded-tr-[100px] rounded-tl-[100px] object-cover lg:object-cover shadow-md shadow-slate-950 lg:rounded-tr-full   lg:rounded-tl-full lg:rounded-br-[150px] lg:rounded-bl-[150px]'
                             src="/about.jpg"
                             alt="About"
                         />
