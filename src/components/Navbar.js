@@ -9,7 +9,7 @@ const Navbar = () => {
     <motion.nav whileInView={{ opacity: 1, x: 0 }}
     initial={{ opacity: 0, x: -100 }}
     transition={{duration:0.5}}
-     className="fixed top-0 left-0 right-0 z-10 w-[100%] m-auto  bg-[#fff]  ">
+     className="fixed top-0 left-0 right-0 z-10 w-[100%] m-auto  bg-gray-200  ">
       <div className="flex  items-center justify-between px-4">
         <img 
         className="h-14 w-14 rounded-full object-cover" src="/logo.png" alt="Logo" />

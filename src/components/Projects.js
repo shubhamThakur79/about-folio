@@ -12,14 +12,8 @@ const Projects = () => {
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 1.3 }}
           className='my-20 text-center text-4xl '>
-          <span className='text-green-600 text-5xl'>P</span>
-          <span className='text-red-500'>r</span>
-          <span className='text-zinc-900'>o</span>
-          <span className='text-fuchsia-500'>j</span>
-          <span className='text-sky-500'>e</span>
-          <span className='text-rose-800'>c</span>
-          <span className='text-lime-500'>t</span>
-          <span className='text-rose-400'>s</span>
+          <span className='text-green-600 text-5xl'>P<span>rojects</span></span>
+          
         </motion.h1>
         <motion.div whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
