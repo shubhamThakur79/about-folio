@@ -10,6 +10,13 @@ const ProjectObj = [
         img: '/ProjectImg/weather.png'
     },
     {
+        title: 'Weather App',
+        description: 'An app that provides current weather information for any location using a weather API.',
+        link: 'https://shubhamthakur79.github.io/WeatherApp/',
+        github: 'https://github.com/shubhamThakur79/WeatherApp.git',
+        img: '/ProjectImg/weather.png'
+    },
+    {
         title: 'Quiz App',
         description: 'A quiz application that allows users to test their knowledge on various topics.',
         link: 'https://shubhamthakur79.github.io/QuizApp/',
