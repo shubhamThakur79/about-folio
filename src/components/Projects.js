@@ -55,19 +55,19 @@ const Projects = () => {
             onClick={handleLeft}
             className={`sm:text-6xl text-4xl cursor-pointer mx-1 ${value === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
           />
-          <div className='flex items-center m-auto md:w-[70%] w-[60%]  overflow-hidden'>
+          <div className='flex  items-center  md:m-auto md:w-[70%] w-[100%]  overflow-hidden  border border-red-800'>
             <motion.div
               animate={{ x: value }}
               transition={{ duration: 0.5 }}
-              className='flex justify-center gap-12 duration-600 lg:mx-10 m-auto '>
+              className='flex justify-center  md:gap-12  duration-600 lg:mx-10 md:m-auto '>
               {ProjectObj.map((project, index) => (
-                <div key={index} className='items-center rounded-lg overflow-hidden ' style={{ width: cardWidth }}>
+                <div key={index} className='items-center rounded-lg overflow-hidden justify-center   border border-red-800' style={{ width: cardWidth }}>
                   <motion.div
                     whileInView={{ opacity: 1, y: 0 }}
                     initial={{ opacity: 0, y: -100 }}
                     transition={{ duration: 0.6 }}
                     className='h-[180px] flex relative mb-1 md:w-[300px] w-[180px] ' style={{ width: cardWidth }}>
-                    <img className='h-[100%] w-full   object-cover' src={project.img} alt={project.title} />
+                    <img className='h-[100%] w-full   object-cover rounded-lg' src={project.img} alt={project.title} />
                     <div className="absolute w-full h-8 bottom-0 bg-gradient-to-b from-transparent to-black/90"></div>
                     <motion.p
                       whileInView={{ opacity: 1, x: 0 }}
@@ -99,7 +99,7 @@ const Projects = () => {
           </div>
           <FaCircleChevronRight
             onClick={handleRight}
-            className={`sm:text-6xl text-4xl px-1 cursor-pointer mr-1 lg:mr-4 ${value === maxScrollWidth ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`sm:text-6xl text-4xl cursor-pointer mx-1  ${value === maxScrollWidth ? 'opacity-50 cursor-not-allowed' : ''}`}
           />
         </div>
       </div>
