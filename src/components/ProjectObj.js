@@ -3,11 +3,11 @@
 // ProjectObj.js
 const ProjectObj = [
     {
-        title: 'Weather App',
-        description: 'An app that provides current weather information for any location using a weather API.',
-        link: 'https://shubhamthakur79.github.io/WeatherApp/',
-        github: 'https://github.com/shubhamThakur79/WeatherApp.git',
-        img: '/ProjectImg/weather.png'
+        title: 'Ipl Dashboard',
+        description: 'Ipl dashboard where user can check the live Score of teams and also check the player list of particular time ',
+        link: 'https://ipl-dashbord.vercel.app/',
+        github: 'https://github.com/shubhamThakur79/IPL_dashbord.git',
+        img: '/ProjectImg/Ipl.png'
     },
     {
         title: 'Weather App',
