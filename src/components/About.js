@@ -12,7 +12,7 @@ const About = () => {
                     initial={{ opacity: 0, y: -100 }}
                     transition={{ duration: 1.5 }}
                     className="my-10 pt-10 pb-10 text-center text-4xl">
-                    <span className='text-fuchsia-600'>A</span>bout <span className="text-neutral-400">Me</span>
+                    <span className='text-fuchsia-600 font-semibold'>A</span>bout <span className="text-neutral-400">Me</span>
                 </motion.h1>
 
                 <div className='flex flex-wrap'>

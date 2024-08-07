@@ -24,15 +24,17 @@ const iconVariants = (duration) => ({
 const Technology = () => {
   return (
     <>
-      <div className="border- b pt-[40px] bg-[#ffffff1e] border-zinc-300 pb-24">
+      <div className="mt-[-70px] bg-gray-500/10 pb-14 ">
+      <div className='lg:pt-6'>
+
         <motion.h1 whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{duration:1.5}}
-          className='my-20 text-center text-4xl text-red-500'>Techno<span className='text-black'>logies</span></motion.h1>
+          className='my-20 text-center text-4xl text-red-500 font-semibold'>Techno<span className='text-white/70'>logies</span></motion.h1>
         <motion.div whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 1.5 }}
-          className="flex flex-wrap items-center justify-center gap-4">
+          className="flex flex-wrap items-center justify-center gap-4 bg-gray-200/10  rounded-lg lg:w-max h-max m-auto py-10">
           <motion.div variants={iconVariants(2.5)}
             initial="initial"
             animate="animate"
@@ -73,6 +75,7 @@ const Technology = () => {
             ReactJS
           </motion.div>
         </motion.div>
+      </div>
       </div>
 
     </>

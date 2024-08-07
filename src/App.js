@@ -19,7 +19,7 @@ const App = () => {
 
       {/* Main Page start from here */}
 
-      <div className="bg-gray-900 text-white/70 overflow-hidden ">
+      <div className="bg-gray-900 text-white/70  ">
         <Navbar />
         <Hero />
         <About/>
