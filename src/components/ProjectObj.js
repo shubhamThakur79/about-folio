@@ -3,6 +3,13 @@
 // ProjectObj.js
 const ProjectObj = [
     {
+        title: 'Swiggy Clone',
+        description: 'Description: This project is a Swiggy clone that allows users to explore restaurants based on their location. Builtwith React.js and Tailwind CSS, it integrates Firebase Authentication, enabling users to sign up with email and securely access personalized features.',
+        link: 'https://swiggy-clone-weld.vercel.app/',
+        github: 'https://github.com/shubhamThakur79/swiggy.clone.git',
+        img:'/ProjectImg/images.jpeg'
+    },
+    {
         title: 'Ipl Dashboard',
         description: 'Ipl dashboard where user can check the live Score of teams and also check the player list of particular time ',
         link: 'https://ipl-dashbord.vercel.app/',

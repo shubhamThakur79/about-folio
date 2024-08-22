@@ -33,16 +33,16 @@ const Projects = () => {
   const maxScrollWidth = -cardWidth * (totalCards - Math.floor(containerWidth / cardWidth));
 
   const handleLeft = () => {
-    setValue((prev) => (prev + cardWidth > 0 ? 0 : prev + cardWidth));
+    setValue((prev) => (prev + cardWidth > 0 ? 0 : prev + cardWidth + 5));
   };
 
   const handleRight = () => {
-    setValue((prev) => (prev - cardWidth < maxScrollWidth ? maxScrollWidth : prev - cardWidth));
+    setValue((prev) => (prev - cardWidth < maxScrollWidth ? maxScrollWidth : prev - cardWidth - 5));
   };
 
   return (
     <div className='pt-10 w-full mt-[-110px] '>
-      <div className='border-b border-zinc-300 bg-gray-200/5 w-full pb-20'>
+      <div className='border-b border-zinc-300 bg-gray-200/5 w-full  pb-20'>
         <motion.h1
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
@@ -55,20 +55,20 @@ const Projects = () => {
             onClick={handleLeft}
             className={`sm:text-6xl  relative md:left-[160px] text-4xl cursor-pointer mx-1 ${value === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
           />
-          <div className='flex  items-center  md:m-auto md:w-[70%] w-[100%]  overflow-hidden '>
+          <div className='flex  items-center  md:m-auto md:w-[70%] w-[100%]  overflow-hidden m-auto'>
             <motion.div
               animate={{ x: value }}
               transition={{ duration: 0.5 }}
               className='flex justify-center  md:gap-12 mx-2 gap-[54px] ml-[4px] duration-600 lg:mx-10 md:m-auto '>
-              {ProjectObj.map((project, index) => (
-                <div key={index} className='items-center rounded-lg overflow-hidden justify-center ' >
+              {ProjectObj?.map((project, index) => (
+                <div key={index} className='items-center w-full rounded-lg overflow-hidden justify-center ' >
                   <motion.div
                     whileInView={{ opacity: 1, y: 0 }}
                     initial={{ opacity: 0, y: -100 }}
                     transition={{ duration: 0.6 }}
                     className='h-[180px] flex relative mb-[2px]  w-[300px] ' >
-                    <img className='h-[100%] w-full   object-cover ' src={project.img} alt={project.title} />
-                    <div className="absolute w-full h-8 bottom-0 bg-gradient-to-b from-transparent to-black/90"></div>
+                    <img className='h-[100%] w-full   object-cover ' src={project?.img} alt={project.title} />
+                    <div className="absolute w-full h-full bottom-0 bg-gradient-to-b from-transparent to-black/90"></div>
                     <motion.p
                       whileInView={{ opacity: 1, x: 0 }}
                       initial={{ opacity: 0, x: -100 }}

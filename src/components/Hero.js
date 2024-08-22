@@ -69,7 +69,7 @@ const Hero = () => {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 1.3 }}
                 className='flex  justify-end lg:justify-start lg:mt-[-307px] mt-[-300px] sticky top-0'>
-                <a target='_blank' className='lg:py-4 duration-300 lg:text-xl lg:px-8 py-4 px-[70px] m-auto lg:m-0 text-[22px] font-semibold hover:text-black bg-gradient-to-r from-pink-400  text-white rounded hover:bg-red-500 focus:bg-green-400 to-purple-500   bg-transparent' href="/Resume.pdf">
+                <a target='_blank' className='lg:py-4 duration-300 lg:text-xl lg:px-8 py-4 px-[70px] m-auto lg:m-0 text-[22px] font-semibold hover:text-black bg-gradient-to-r from-pink-400  text-white rounded hover:bg-red-500 focus:bg-green-400 to-purple-500   bg-transparent' href="/Shubham'sresume.pdf">
                     Get Resume
                 </a>
             </motion.div>
