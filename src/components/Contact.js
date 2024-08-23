@@ -9,7 +9,7 @@ const Contact = () => {
       <motion.div whileInView={{ opacity: 1, x: 0 }}
     initial={{ opacity: 0, x: -100 }}
     transition={{duration:1.2}}
-    className='border border-neutral-900 justify-center pb-20 flex items-center flex-col mb-10'>
+    className='border border-neutral-900 md:border-gray-300 justify-center pb-20 flex items-center flex-col mb-10'>
       <h1 className='my-10   text-4xl font-bold '>Get In <span className='text-green-600'>Touch</span></h1>
     
 

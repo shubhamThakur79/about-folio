@@ -48,7 +48,7 @@ const Projects = () => {
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 1.3 }}
           className='my-20 text-center text-4xl'>
-          <span className='text-gray-300 text-5xl'>Pro<span className='text-red-500'>jects</span></span>
+          <span className='text-gray-300 md:text-gray-800 text-5xl'>Pro<span className='text-red-500'>jects</span></span>
         </motion.h1>
         <div className='relative flex items-center justify-between w-full '>
           <FaCircleChevronLeft

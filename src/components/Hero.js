@@ -21,7 +21,7 @@ const container = (delay) => ({
 const Hero = () => {
 
     return (
-        <div className="mt-[90px] lg:px-10 lg:pl-32   pt-[70px] mb-8 h-[95vh] lg:h-[80vh] border-neutral-400  lg:mb-35">
+        <div className="mt-[90px] lg:px-10 lg:pl-32   pt-[70px] mb-8 h-[95vh] lg:h-[80vh] border-neutral-400 md:border-black/40  lg:mb-35">
             <div className="flex flex-wrap">
                 <div className="w-full  md:w-1/2 lg:w-1/2">
                     <div className='w-full  pb-3 lg:hidden shadow-lg border-blue-500'>
@@ -50,7 +50,7 @@ const Hero = () => {
                         <motion.p variants={container(0.9)}
                             initial="hidden"
                             animate="visible"
-                            className='my-2 px-3 lg:p-0 max-w-xl py-6 tracking-tight text-zinc-300/70 font-semibold'>
+                            className='my-2 px-3 lg:p-0 max-w-xl py-6 tracking-tight text-zinc-300/70 md:text-black/90 font-semibold'>
                             As a passionate and skilled frontend developer, I specialize in creating visually appealing and user-friendly web interfaces. With a strong foundation in HTML, CSS, and JavaScript, I bring designs to life, ensuring seamless and responsive user experiences. My expertise in React.js allows me to build dynamic and efficient web applications, focusing on performance and scalability.
                         </motion.p>
                     </div>

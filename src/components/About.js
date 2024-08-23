@@ -6,13 +6,13 @@ import { motion } from 'framer-motion';
 
 const About = () => {
     return (
-        <div className=" text-center  h-full w-full bg-gray-600 lg:text-lg rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10  border-gray-100">
+        <div className=" text-center  h-full w-full bg-gray-600 md:bg-transparent lg:text-lg rounded-md bg-clip-padding backdrop-filter bg-opacity-10 md:border-transparent border-gray-100">
 
                 <motion.h1 whileInView={{ opacity: 1, y: 0 }}
                     initial={{ opacity: 0, y: -100 }}
                     transition={{ duration: 1.5 }}
                     className="my-10 pt-10 pb-10 text-center text-4xl">
-                    <span className='text-fuchsia-600 font-semibold'>A</span>bout <span className="text-neutral-400">Me</span>
+                    <span className='text-fuchsia-600 font-semibold'>A</span>bout <span className="text-neutral-400 md:text-slate-900">Me</span>
                 </motion.h1>
 
                 <div className='flex flex-wrap'>
@@ -23,8 +23,10 @@ const About = () => {
                         className='w-full p-2 lg:w-1/2 lg:p-8'
                     >
                         <div>
+                            <img className='block md:hidden lg:shadow-3xl mb-10 lg:h-[350px] h-[270px] w-[95%] mt-[-30px] lg:w-auto m-auto lg:mt-[-65px] rounded max-h-[200px] object-cover lg:object-cover shadow-md shadow-slate-950 lg:rounded-tr-full   lg:rounded-tl-full lg:rounded-br-[150px] lg:rounded-bl-[150px]'  src="https://img.freepik.com/free-vector/portrait-programmer-working-with-pc_23-2148222500.jpg?t=st=1724416181~exp=1724419781~hmac=9a414fbb7a3ec8e62cdb6551e54aaca8f8c87070e8f8c8a3623210744c6c1ac2&w=740" alt="about me" />
+
                             <img
-                                className='lg:shadow-3xl mb-10 lg:h-[350px] h-[370px] w-[300px] mt-[-30px] lg:w-auto m-auto lg:mt-[-65px] rounded-tr-[100px] rounded-tl-[100px] object-cover lg:object-cover shadow-md shadow-slate-950 lg:rounded-tr-full   lg:rounded-tl-full lg:rounded-br-[150px] lg:rounded-bl-[150px]'
+                                className='hidden md:block lg:shadow-3xl mb-10 lg:h-[350px] h-[370px] w-[300px] mt-[-30px] lg:w-auto m-auto lg:mt-[-65px] rounded-tr-[100px] rounded-tl-[100px] object-cover lg:object-cover shadow-md shadow-slate-950 lg:rounded-tr-full   lg:rounded-tl-full lg:rounded-br-[150px] lg:rounded-bl-[150px]'
                                 src="/about.jpg"
                                 alt="About"
                             />
