@@ -4,9 +4,37 @@ import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedin, FaPhoneVolume, FaTwitter } from "react-icons/fa6";
 import { motion } from "framer-motion"
 import { GoArrowUp } from 'react-icons/go';
+import toast from 'react-hot-toast';
 const Contact = () => {
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "a6aa8cad-cd66-415b-b7b0-7861a4bd1b4c");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
   return (
     <>
+      {result &&
+        <span className='text-center text-xl font-semibold'>{alert(result)}</span>
+      }
       <motion.div whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: -100 }}
         transition={{ duration: 1.2 }}
@@ -36,13 +64,13 @@ const Contact = () => {
             <div class="">
               <div class="max-w-md mx-auto px-8 py-6 bg-gray-100 rounded-lg shadow-lg">
                 <h2 class="text-2xl font-semibold text-gray-800 mb-4">Contact Us</h2>
-                <form className=''>
+                <form onSubmit={onSubmit}>
                   <div class="mb-4">
                     <label class="block text-gray-800 mb-1" for="name">Your Name</label>
                     <input
                       class="w-full px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300 transition duration-300"
                       placeholder="Enter your name"
-                      type="text"
+                      type="text" name="name" required
                     />
                   </div>
                   <div class="mb-4">
@@ -50,9 +78,9 @@ const Contact = () => {
                     <input
                       class="w-full px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300 transition duration-300"
                       placeholder="Enter your email"
-                      name="email"
+
                       id="email"
-                      type="email"
+                      type="email" name="email" required
                     />
                   </div>
                   <div class="mb-4">
@@ -62,7 +90,7 @@ const Contact = () => {
                       class="w-full px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300 transition duration-300"
                       rows="4"
                       placeholder="Enter your message"
-                      name="message"
+                      name="message" required
                       id="message"
                     ></textarea>
                   </div>
@@ -75,12 +103,14 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
         </div>
+
+
 
 
         {/* <a className='text-right underline ml-[300px] lg:ml-[990px] mb-[-50px] lg:mb-[-50px] text-3xl p-3 bg-gray-100/60 rounded-[50%] fixed right-0 top-10' href="#"><GoArrowUp />        </a> */}
       </motion.div>
+
     </>
 
   )
