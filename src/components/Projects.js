@@ -1,48 +1,53 @@
-"use client";
-import React, { useState, useEffect } from 'react';
-import ProjectObj from './ProjectObj'; // Assuming ProjectObj.js is in the same directory
-import { FaGithub } from "react-icons/fa";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import ProjectObj from "../components/ProjectObj";
 import { GiClick } from "react-icons/gi";
-import { motion } from "framer-motion";
-import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
+import { motion } from 'framer-motion';
+import { FaCircleChevronLeft, FaCircleChevronRight, FaGithub } from "react-icons/fa6";
+import { useState } from "react";
 
 const Projects = () => {
-  const [value, setValue] = useState(0);
-  const [cardWidth, setCardWidth] = useState(300);
-  const [containerWidth, setContainerWidth] = useState(0);
+  const [sliderRef, setSliderRef] = useState(null);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setContainerWidth(window.innerWidth * 0.7);
-      if (window.innerWidth < 640) {
-        setCardWidth(window.innerWidth * 0.9);
-      } else {
-        setCardWidth(350);
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
       }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const totalCards = ProjectObj.length;
-  const maxScrollWidth = -cardWidth * (totalCards - Math.floor(containerWidth / cardWidth));
-
-  const handleLeft = () => {
-    setValue((prev) => (prev + cardWidth > 0 ? 0 : prev + cardWidth + 5));
-  };
-
-  const handleRight = () => {
-    setValue((prev) => (prev - cardWidth < maxScrollWidth ? maxScrollWidth : prev - cardWidth - 5));
+    ],
+    prevArrow: <FaCircleChevronLeft className="text-3xl  ml-10 cursor-pointer" />,
+    nextArrow: <FaCircleChevronRight className="text-3xl  cursor-pointer mr-10 " />,
   };
 
   return (
-    <div className='pt-10 w-full mt-[-110px] '>
-      <div className='border-b border-zinc-300 bg-gray-200/5 w-full  pb-20'>
+    <div className='pt-10 w-full'>
+      <div className='border-b border-zinc-300 bg-gray-200/5 w-full pb-20'>
         <motion.h1
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
@@ -50,61 +55,70 @@ const Projects = () => {
           className='my-20 text-center text-4xl'>
           <span className='text-gray-300 md:text-gray-800 text-5xl'>Pro<span className='text-red-500'>jects</span></span>
         </motion.h1>
-        <div className='relative flex items-center justify-between w-full '>
-          <FaCircleChevronLeft
-            onClick={handleLeft}
-            className={`sm:text-6xl  relative md:left-[160px] text-4xl cursor-pointer mx-1 ${value === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
-          />
-          <div className='flex  items-center  md:m-auto md:w-[70%] w-[100%]  overflow-hidden m-auto'>
-            <motion.div
-              animate={{ x: value }}
-              transition={{ duration: 0.5 }}
-              className='flex justify-center  md:gap-12 mx-2 gap-[54px] ml-[4px] duration-600 lg:mx-10 md:m-auto '>
-              {ProjectObj?.map((project, index) => (
-                <div key={index} className='items-center w-full rounded-lg overflow-hidden justify-center ' >
+        <div className='relative  w-full'>
+          <Slider className="md:px-10 " ref={setSliderRef} {...settings}>
+            {ProjectObj?.map((project, index) => (
+              <div key={index} className='px-2 '>
+                <div className='bg-white shadow-lg rounded-lg  '>
                   <motion.div
                     whileInView={{ opacity: 1, y: 0 }}
                     initial={{ opacity: 0, y: -100 }}
                     transition={{ duration: 0.6 }}
-                    className='h-[180px] flex relative mb-[2px]  w-[300px] ' >
-                    <img className='h-[100%] w-full   object-cover ' src={project?.img} alt={project.title} />
-                    <div className="absolute w-full h-full bottom-0 bg-gradient-to-b from-transparent to-black/90"></div>
+                    className='h-[180px] relative '>
+                    <img className='h-full w-full object-cover rounded' src={project?.img} alt={project.title} />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90"></div>
                     <motion.p
                       whileInView={{ opacity: 1, x: 0 }}
                       initial={{ opacity: 0, x: -100 }}
                       transition={{ duration: 1.2 }}
-                      className='absolute bottom-0 ml-2 pb-1 font-bold text-2xl text-white'>
-                      {project.title}
+                      className='absolute ml-9 md:ml-0 bottom-2 left-2 text-2xl font-bold text-white  w-full'>
+                      {project?.title}
                     </motion.p>
+
                   </motion.div>
+                  {project?.tech &&
+                    <p className="w-full mt-2 font-semibold text-wrap ml-2 text-black">
+
+                      {project?.tech}
+                    </p>
+                  }
                   <motion.div
                     whileInView={{ opacity: 1, y: 0 }}
                     initial={{ opacity: 0, y: -100 }}
                     transition={{ duration: 1.5 }}
-                    className='flex mb-[2px] justify-center items-center gap-1' >
-                    <details className='w-full '>
-                      <summary className='bg-red-500 w-[100px] duration-300 hover:bg-indigo-500  flex items-center h-9 px-[10px] rounded gap-2 text-white'>Description</summary>
-                      <p className='bg-zinc-800/40 text-white/90 px-1 absolute top-60' style={{ width: cardWidth }}>{project.description}</p>
+                    className='md:p-4 p-2 flex gap-2 w-full '>
+                    <details className='mb-3'>
+                      <summary className='bg-red-500 w-[100px] duration-300 hover:bg-indigo-500 flex items-center h-9 px-[10px] rounded text-white'>
+                        Description
+                      </summary>
+                      <p className='bg-zinc-800 w-[337px]  md:ml-[-15px] absolute h-max top-0 duration-200 text-white/90 px-2 py-2  rounded'>{project.description}</p>
                     </details>
-                    <button className='duration-300 hover:bg-gray-500  flex items-center h-9 px-[10px] rounded gap-2 bg-black text-white'>
-                      <FaGithub /><a target='_blank' href={project.github}>GitHub</a>
-                    </button>
-                    <button className=' duration-300 hover:bg-green-700 delay-100 transition flex items-center h-9 px-[10px] rounded gap-1 text-white bg-sky-600'>
-                      <GiClick className='hover:text-red-600' /><a target='_blank' href={project.link}>LiveView</a>
-                    </button>
+                    <div className='flex gap-2 '>
+                      <a
+                        href={project.github}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='duration-300 hover:bg-gray-500 flex items-center h-9 px-[10px] rounded gap-2 bg-black text-white'>
+                        <FaGithub /> GitHub
+                      </a>
+                      <a
+                        href={project.link}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='duration-300 hover:bg-green-700 flex items-center h-9 px-[10px] rounded gap-1 text-white bg-sky-600'>
+                        <GiClick className='hover:text-red-600' /> LiveView
+                      </a>
+                    </div>
                   </motion.div>
+
                 </div>
-              ))}
-            </motion.div>
-          </div>
-          <FaCircleChevronRight
-            onClick={handleRight}
-            className={`sm:text-6xl  relative md:right-[130px] text-4xl cursor-pointer mx-1  ${value === maxScrollWidth ? 'opacity-50 cursor-not-allowed' : ''}`}
-          />
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Projects;

@@ -28,7 +28,7 @@ const App = () => {
         <Projects/>
         <Contact/>
 
-        <a className='text-right underline ml-[300px] lg:ml-[990px] mb-[-50px] lg:mb-[-50px] text-xl md:text-3xl md:p-3 p-2 bg-gray-100/60 rounded-[50%] fixed right-0 bottom-16 text-black' href="#"><GoArrowUp />        </a>
+        <a className='text-right underline ml-[300px] lg:ml-[990px] mb-[-50px] lg:mb-[-50px] text-xl md:text-3xl md:p-3 p-2 bg-gray-100/60 rounded-tl-2xl rounded-bl-2xl fixed right-0 bottom-16 text-black' href="#"><GoArrowUp />        </a>
       </div>
 
 

@@ -21,3 +21,41 @@ code {
 html,body{
   scroll-behavior: smooth;
 }
+.slick-slider .slick-prev,
+.slick-slider .slick-next {
+ 
+  /* color: pink; */
+  background-color: white;
+  color:rgba(0, 0, 0, 0.705);
+  transition: all 0.6ms ease-in;
+
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;  
+
+
+  /* Make sure arrows are above the content */
+}
+
+.slick-slider .slick-prev:hover,
+.slick-slider .slick-next:hover {
+  z-index: 100;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.644);
+  /* background-color: darkred; Hover effect */
+}
+
+.slick-prev {
+  /* left: 250px; Adjust as needed */
+  margin-left: 30px;
+}
+
+.slick-next {
+  /* right: 0px; Adjust as needed */
+  margin-right: 30px;
+}
