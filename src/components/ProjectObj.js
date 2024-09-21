@@ -3,6 +3,16 @@
 // ProjectObj.js
 const ProjectObj = [
     {
+        title: 'AI Resume Builder',
+        description: 'Description: This project is an AI-powered resume builder that allows users to create professional resumes with ease. The frontend is developed using React.js, Tailwind CSS, and Shadcn UI, while Firebase is used for backend support and authentication via Clerk.',
+
+        link: 'https://ai-resume-builder-lime.vercel.app/',
+        github: 'https://github.com/shubhamThakur79/Ai-resume-builder.git',
+        img: '/ProjectImg/ai.png',
+        tech: "#React.js, #Tailwind Css,#Shadcn UI,#firebase for backend, #Clerk for Authentication"
+
+    },
+    {
         title: 'Yumi Food',
         description: 'Yumi Food is a modern, interactive platform designed to bring you the best of Indian cuisine with a seamless and user-friendly experience. Our site is powered by the latest web technologies to ensure you enjoy both functionality and style.',
 

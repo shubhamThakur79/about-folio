@@ -86,7 +86,7 @@ const Projects = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     initial={{ opacity: 0, y: -100 }}
                     transition={{ duration: 1.5 }}
-                    className='md:p-4 p-2 flex gap-2 w-full '>
+                    className='md:p-4 p-2 flex gap-1 md:gap-2 justify-center  w-full '>
                     <details className='mb-3'>
                       <summary className='bg-red-500 w-[100px] duration-300 hover:bg-indigo-500 flex items-center h-9 px-[10px] rounded text-white'>
                         Description
