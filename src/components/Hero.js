@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import resume from  "./../../src/resume/Resume.pdf"
 const container = (delay) => ({
     hidden: {
         x: -100,
@@ -87,7 +87,7 @@ const Hero = () => {
                     target="_blank"
                 
                     className="lg:py-4 duration-300 lg:text-xl lg:px-8 py-4 px-[70px] m-auto lg:m-0 text-[22px] font-semibold hover:text-black bg-gradient-to-r from-pink-400 text-white rounded hover:bg-red-500 focus:bg-green-400 to-purple-500 bg-transparent"
-                    href="/Shubham'sResume.pdf"
+                    href={resume}
                 >
                     Get Resume
                 </a>
