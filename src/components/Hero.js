@@ -28,7 +28,7 @@ const Hero = () => {
                             initial={{ y: -100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 1, delay: 1 }}
-                            className={`border-x border-black mt-[-105px] bg-gray-200/10 flex justify-center items-center bg-[url('https://img.freepik.com/premium-photo/concept-image-web-design_476363-10271.jpg?size=626&ext=jpg&ga=GA1.1.785720697.1706798610&semt=ais_hybrid')] h-64 w-full bg-cover bg-center`}
+                            className={`border-x border-black mt-[-105px] bg-gray-200/10 flex justify-center items-center bg-[url("https://img.freepik.com/premium-photo/concept-image-web-design_476363-10271.jpg?size=626&ext=jpg&ga=GA1.1.785720697.1706798610&semt=ais_hybrid")] h-64 w-full bg-cover bg-center`}
                         >
                             <img
                                 className="shadow-md my-[30px] shadow-[#ff0000b0] border-[2px] rounded-[50%] h-48 object-cover w-48"
