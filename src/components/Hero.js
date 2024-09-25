@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import resume from  "./../../src/resume/Resume.pdf"
+import resume from  "./../../src/resume/Shubham's_Resume.pdf"
 const container = (delay) => ({
     hidden: {
         x: -100,
