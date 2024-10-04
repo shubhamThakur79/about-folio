@@ -5,6 +5,7 @@ import Technology from './components/Technology';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import { GoArrowUp } from 'react-icons/go';
+import { motion } from 'framer-motion';
 
 
 const App = () => {
@@ -23,12 +24,22 @@ const App = () => {
       <div className="bg-gray-900 text-white/70 overflow-hidden md:bg-transparent md:text-black">
         <Navbar />
         <Hero />
+        <Projects/>
         <About/>
         <Technology/>
-        <Projects/>
         <Contact/>
 
-        <a className='text-right underline ml-[300px] lg:ml-[990px] mb-[-50px] lg:mb-[-50px] text-xl md:text-3xl md:p-3 p-2 bg-gray-100/60 rounded-tl-2xl rounded-bl-2xl fixed right-0 bottom-16 text-black' href="#"><GoArrowUp />        </a>
+        <motion.a
+      href="#"
+      className="fixed right-2 bottom-4 z-30 p-3 bg-gradient-to-r from-blue-400 to-red-500 text-white rounded-full shadow-lg flex items-center justify-center text-xl md:text-2xl hover:scale-105 transition-transform duration-300 ease-in-out"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <GoArrowUp />
+    </motion.a>
       </div>
 
 

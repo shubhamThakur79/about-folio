@@ -1,53 +1,99 @@
 "use client"
-import React from 'react';
 
+import React from 'react';
 import { motion } from 'framer-motion';
 
+export default function Component() {
+  const cardStyle = "bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl shadow-xl p-6";
 
-const About = () => {
-    return (
-        <div className=" text-center  h-full w-full bg-gray-600 md:bg-transparent lg:text-lg rounded-md bg-clip-padding backdrop-filter bg-opacity-10 md:border-transparent border-gray-100">
+  return (
+    <div className="min-h-screen py-12 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.3, // Creates smooth entrance one after another
+            },
+          },
+        }}
+        className="container mx-auto px-4"
+      >
+        {/* Animated Heading */}
+        <motion.h1
+          variants={{
+            hidden: { y: -50, opacity: 0 },
+            visible: { y: 0, opacity: 1 },
+          }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text"
+        >
+          About Me
+        </motion.h1>
 
-                <motion.h1 whileInView={{ opacity: 1, y: 0 }}
-                    initial={{ opacity: 0, y: -100 }}
-                    transition={{ duration: 1.5 }}
-                    className="my-10 pt-10 pb-10 text-center text-4xl">
-                    <span className='text-fuchsia-600 font-semibold'>A</span>bout <span className="text-neutral-400 md:text-slate-900">Me</span>
-                </motion.h1>
+        {/* Animated Cards */}
+        <div className="flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-8">
+          {/* Image Card Animation */}
+          <motion.div
+            variants={{
+              hidden: { x: -100, opacity: 0 },
+              visible: { x: 0, opacity: 1 },
+            }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className={`w-full lg:w-1/3 ${cardStyle}`}
+          >
+            <img
+              src="https://img.freepik.com/free-vector/portrait-programmer-working-with-pc_23-2148222500.jpg?t=st=1724416181~exp=1724419781~hmac=9a414fbb7a3ec8e62cdb6551e54aaca8f8c87070e8f8c8a3623210744c6c1ac2&w=740"
+              alt="About me"
+              className="w-full h-[180px] rounded-xl object-cover shadow-lg block md:hidden"
+            />
+            <img
+              src="/about.jpg"
+              alt="About"
+              className="w-full h-[380px] rounded-xl object-cover shadow-lg hidden md:block"
+            />
+          </motion.div>
 
-                <div className='flex flex-wrap'>
-                    <motion.div
-                        whileInView={{ opacity: 1, x: 0 }}
-                        initial={{ opacity: 0, x: -100 }}
-                        transition={{ duration: 0.6 }}
-                        className='w-full p-2 lg:w-1/2 lg:p-8'
-                    >
-                        <div>
-                            <img className='block md:hidden lg:shadow-3xl mb-10 lg:h-[350px] h-[270px] w-[95%] mt-[-30px] lg:w-auto m-auto lg:mt-[-65px] rounded max-h-[200px] object-cover lg:object-cover shadow-md shadow-slate-950 lg:rounded-tr-full   lg:rounded-tl-full lg:rounded-br-[150px] lg:rounded-bl-[150px]'  src="https://img.freepik.com/free-vector/portrait-programmer-working-with-pc_23-2148222500.jpg?t=st=1724416181~exp=1724419781~hmac=9a414fbb7a3ec8e62cdb6551e54aaca8f8c87070e8f8c8a3623210744c6c1ac2&w=740" alt="about me" />
+          {/* Text Card Animation */}
+          <motion.div
+            variants={{
+              hidden: { x: 100, opacity: 0 },
+              visible: { x: 0, opacity: 1 },
+            }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className={`w-full lg:w-2/3 ${cardStyle}`}
+          >
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-pink-300">Hey, I'm Shubham</h2>
+            <p className="text-base md:text-lg leading-relaxed mb-4">
+              I'm from the beautiful hills of Himachal Pradesh, India. Right now, I'm studying Computer Applications (BCA) and I'm really into making websites. I'm learning HTML, CSS, and JavaScript to create cool stuff you can see on websites.
+            </p>
+            <p className="text-base md:text-lg leading-relaxed mb-4">
+              I love technology and being creative, so coding is perfect for me. I'm always trying to get better at it, paying attention to all the little details to make websites look awesome and easy to use.
+            </p>
+            <p className="text-base md:text-lg leading-relaxed">
+              When I'm not coding, I like exploring nature around me. Himachal Pradesh has some amazing places, and it gives me new ideas. Whether I'm hiking in forests or looking at snowy mountains, being in nature helps me relax and think of new ideas for my work.
+            </p>
+          </motion.div>
+        </div>
 
-                            <img
-                                className='hidden md:block lg:shadow-3xl mb-10 lg:h-[350px] h-[370px] w-[300px] mt-[-30px] lg:w-auto m-auto lg:mt-[-65px] rounded-tr-[100px] rounded-tl-[100px] object-cover lg:object-cover shadow-md shadow-slate-950 lg:rounded-tr-full   lg:rounded-tl-full lg:rounded-br-[150px] lg:rounded-bl-[150px]'
-                                src="/about.jpg"
-                                alt="About"
-                            />
-                        </div>
-                    </motion.div>
-                    <motion.div whileInView={{ opacity: 1, x: 0 }}
-                        initial={{ opacity: 0, x: 100 }}
-                        transition={{ duration: 1 }}
-
-                        className="w-full lg:w-1/2">
-                        <div className='flex text-start p-3 lg:p-0 justify-center lg:justify-start mt-[-30px]'>
-                            <p className='max-w-xl'>
-                                Hey, I'm Shubham, and I'm from the beautiful hills of Himachal Pradesh, India. I'm studying Computer Applications (BCA), and right now, I'm really into making websites. I'm learning HTML, CSS, and JavaScript to make cool stuff you can see on the front of websites. I love technology and being creative, so coding is a perfect fit for me. I'm always trying to get better at it, paying attention to all the little details to make websites look awesome and easy to use. When I'm not coding, I like exploring the nature around me. Himachal Pradesh has some amazing places to see, and I find it super inspiring. Whether I'm hiking in the forests or looking at the snowy mountains, being in nature helps me relax and gives me new ideas. I'm excited about my studies and getting better at web development. I think it's a cool way to combine my love for technology with making things that people enjoy using.
-                            </p>
-                        </div>
-                    </motion.div>
-                </div>
-            </div>
-
-     
-    );
+        {/* Journey Section Animation */}
+        <motion.div
+          variants={{
+            hidden: { y: 50, opacity: 0 },
+            visible: { y: 0, opacity: 1 },
+          }}
+          transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+          className={`mt-12 ${cardStyle}`}
+        >
+          <h3 className="text-xl md:text-2xl font-semibold mb-4 text-yellow-300">My Journey</h3>
+          <p className="text-base md:text-lg leading-relaxed">
+            I'm excited about learning more in my studies and getting better at making websites. It's a fun way to use my love for technology to make things people enjoy using. I'm just starting out, but I'm working hard to learn new things every day. I want to make websites that are not just nice to look at, but also easy for people to use. It's amazing how I can take ideas from the beautiful nature around me in Himachal Pradesh and turn them into cool designs on the internet. I'm looking forward to growing more in this field and seeing where this journey takes me!
+          </p>
+        </motion.div>
+      </motion.div>
+    </div>
+  );
 }
-
-export default About;

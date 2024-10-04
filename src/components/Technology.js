@@ -1,86 +1,73 @@
 "use client"
 import React from 'react'
-import { RiReactjsLine } from "react-icons/ri";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { RiReactjsLine, RiTailwindCssFill, RiJavascriptFill } from "react-icons/ri";
 import { DiCss3 } from "react-icons/di";
 import { IoLogoHtml5 } from "react-icons/io5";
-import { RiJavascriptFill } from "react-icons/ri";
-import { animate, motion } from 'framer-motion';
+import { FaGitAlt, FaGithub } from "react-icons/fa";
+import { SiRedux, SiShadcnui } from "react-icons/si";
+import { motion } from 'framer-motion';
 
 const iconVariants = (duration) => ({
-  initial: { y: -10 },
+  initial: { y: -10, scale: 0.9 },
   animate: {
     y: [10, -10],
+    scale: [0.9, 1],
     transition: {
       duration: duration,
-      ease: "linear",
+      ease: "easeInOut",
       repeat: Infinity,
       repeatType: "reverse",
-    }
+    },
   }
-})
+});
 
+const skills = [
+  { icon: <IoLogoHtml5 className='text-5xl text-orange-600' />, label: "HTML5" },
+  { icon: <DiCss3 className='text-5xl text-blue-600' />, label: "CSS3" },
+  { icon: <RiJavascriptFill className='text-5xl text-yellow-500' />, label: "JavaScript" },
+  { icon: <RiTailwindCssFill className='text-5xl text-teal-500' />, label: "TailwindCSS" },
+  { icon: <RiReactjsLine className='text-5xl text-blue-400' />, label: "ReactJS" },
+  { icon: <SiRedux className='text-5xl text-purple-500' />, label: "Redux" },
+  { icon: <SiShadcnui className='text-5xl text-green-400' />, label: "ShadCN" },
+  { icon: <FaGitAlt className='text-5xl text-red-600' />, label: "Git" },
+  { icon: <FaGithub className='text-5xl text-black' />, label: "GitHub" },
+];
 
 const Technology = () => {
   return (
-    <>
-      <div className="mt-[-70px] bg-gray-500/10 md:bg-transparent pb-14 ">
-      <div className='lg:pt-6'>
+    <div className="relative bg-gray-500/10 md:bg-transparent pt-5 pb-28">
+      {/* Interactive Background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 opacity-30 z-0 animate-pulse"></div>
 
-        <motion.h1 whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: -100 }}
-          transition={{duration:1.5}}
-          className='my-20 relative top-10 text-center text-4xl text-red-500 font-semibold'>Techno<span className='text-white/70 md:text-black/70'>logies</span></motion.h1>
-        <motion.div whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 1.5 }}
-          className="flex flex-wrap items-center justify-center md:text-orange-600 font-semibold md:text-lg gap-4 bg-gray-200/10 md:bg-black/20 md:max-w-[80%] rounded-lg lg:w-max h-max m-auto py-10">
-          <motion.div variants={iconVariants(2.5)}
+      <motion.h1
+        whileInView={{ opacity: 1, y: 0, rotate: [-5, 0] }}
+        initial={{ opacity: 0, y: -100 }}
+        transition={{ duration: 1.5 }}
+        className='relative z-10 mt-5 mb-12 text-center text-4xl md:text-5xl text-white font-extrabold'>
+        Techno<span className='text-yellow-400'>logies</span>
+      </motion.h1>
+
+      <motion.div
+        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        transition={{ duration: 1 }}
+        className="relative z-10 flex flex-wrap justify-center gap-6"
+      >
+        {skills.map((skill, index) => (
+          <motion.div
+            key={index}
+            variants={iconVariants(2 + index * 0.5)}
             initial="initial"
             animate="animate"
-
-            className='rounded-2xl border-neutral-800 p-4 text-center'>
-            <IoLogoHtml5 className='text-7xl text-sky-600' />
-            HTML5
+            className="w-[90px] h-[90px] md:w-[120px] md:h-[120px] bg-gray-800/70 backdrop-blur-md rounded-xl flex flex-col items-center justify-center shadow-lg hover:scale-110 transform transition-all duration-300"
+          >
+            {skill.icon}
+            <span className='mt-2 text-white text-sm md:text-base'>{skill.label}</span>
           </motion.div>
-          <motion.div variants={iconVariants(3)}
-            initial="initial"
-            animate="animate"
-
-            className='rounded-2xl border-neutral-800 p-4 text-center'>
-            <DiCss3 className='text-7xl text-red-500' />
-            Css3
-          </motion.div>
-          <motion.div variants={iconVariants(3.5)}
-            initial="initial"
-            animate="animate"
-            className='rounded-2xl border-neutral-800 p-4'>
-            <RiTailwindCssFill className='text-7xl text-blue-600 text-center' />
-            Tailwind Css
-          </motion.div>
-          <motion.div variants={iconVariants(4)}
-            initial="initial"
-            animate="animate"
-
-            className='rounded-2xl border-neutral-800 p-4'>
-            < RiJavascriptFill className='text-7xl text-amber-600 text-center' />
-            JavaScript
-          </motion.div>
-          <motion.div variants={iconVariants(4.5)}
-            initial="initial"
-            animate="animate"
-
-            className='rounded-2xl border-neutral-800 p-4'>
-            <RiReactjsLine className='text-7xl text-blue-600 text-center' />
-            ReactJS
-          </motion.div>
-        </motion.div>
-      </div>
-      </div>
-
-    </>
-
-  )
+        ))}
+      </motion.div>
+    </div>
+  );
 }
 
-export default Technology
+export default Technology;
