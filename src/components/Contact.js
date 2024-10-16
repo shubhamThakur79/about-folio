@@ -37,10 +37,11 @@ const Contact = () => {
 
       {/* Contact Section Container */}
       <motion.div
+      id="contacts"
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 1.2 }}
-        className="bg-gradient-to-r from-purple-600 to-blue-500 py-20 md:px-5"
+        className="bg-[#080808] py-20 md:px-5"
       >
         {/* Section Title */}
         <motion.h1

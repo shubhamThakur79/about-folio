@@ -7,7 +7,7 @@ export default function Component() {
   const cardStyle = "bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl shadow-xl p-6";
 
   return (
-    <div className="min-h-screen py-12 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white">
+    <div className="min-h-screen py-12 bg-[#080808] text-white">
       <motion.div
         initial="hidden"
         animate="visible"

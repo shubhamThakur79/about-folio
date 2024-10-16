@@ -46,8 +46,8 @@ const Projects = () => {
   };
 
   return (
-    <div className='w-full '>
-      <div className='border-b py-10 border-zinc-300 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 w-full pb-20'>
+    <div id="projects" className='w-full '> 
+      <div className='border-b py-10  bg-[#080808] w-full pb-20'>
       <motion.h1
   whileInView={{ opacity: 1, y: 0, rotate: [-5, 0] }}
   initial={{ opacity: 0, y: -100 }}

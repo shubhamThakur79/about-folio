@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
 import resume from "./../../src/resume/Shubham's_Resume.pdf";
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const AnimatedSphere = () => {
   const meshRef = useRef();
@@ -28,7 +29,7 @@ const AnimatedSphere = () => {
 
 const Hero = () => {
   return (
-    <div className="relative md:pl-20 min-h-screen mx-auto bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 overflow-hidden">
+    <div className="relative md:pl-20 min-h-screen mx-auto bg-[#080808]  overflow-hidden">
       <div className="absolute inset-0 opacity-50">
         <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
           <ambientLight intensity={0.5} />
@@ -38,26 +39,26 @@ const Hero = () => {
         </Canvas>
       </div>
       <motion.div
-  initial={{ opacity: 0, scale: 0.8 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 1, delay: 0.5 }}
-  className="relative m-auto w-64 h-64 md:w-80 md:h-80 overflow-hidden shadow-lg transition-transform duration-300 transform scale-105 block md:hidden flex justify-center mt-24 z-10"
->
-  <motion.img
-    initial={{ x: 100, opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ duration: 1, delay: 1 }}
-    className="h-full w-full object-cover rounded-full transition-transform duration-300 scale-110" // Default scaling for image
-    src="/logo.png"
-    alt="Shubham's Logo"
-  />
-  {/* Gradient Border Effect */}
-  <div className="absolute inset-0 rounded-full border-4 border-transparent 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="relative bg-transparent m-auto w-64 h-64 md:w-80 md:h-80 overflow-hidden shadow-lg transition-transform duration-300 transform scale-105 block md:hidden flex justify-center mt-24 z-10"
+      >
+        <motion.img
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="h-full w-full object-cover rounded-full transition-transform duration-300 scale-110" // Default scaling for image
+          src="/logo.png"
+          alt="Shubham's Logo"
+        />
+        {/* Gradient Border Effect */}
+        <div className="absolute inset-0 rounded-full border-4 border-transparent 
                   bg-gradient-to-br from-white to-white opacity-10"></div>
-  {/* Dynamic Glowing Effect */}
-  <div className="absolute inset-0 rounded-full border-4 border-white opacity-40 
+        {/* Dynamic Glowing Effect */}
+        <div className="absolute inset-0 rounded-full border-4 border-white opacity-40 
                   transition duration-300 scale-105 animate-pulse"></div>
-</motion.div>
+      </motion.div>
 
       <div className="relative m-auto z-10 flex flex-col lg:flex-row items-center justify-between min-h-screen text-white px-4 md:px-8 lg:px-16 py-12">
         <div className="w-full lg:w-1/2 flex flex-col items-start lg:items-start text-center lg:text-left mb-12 lg:mb-0">
@@ -89,38 +90,77 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className='md:mt-5 mt-10'
+            className='md:mt-5 mt-10 flex gap-7 flex-wrap justify-center md:justify-start'
           >
-            <a 
+            <a
               href={resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="  bg-black text-white font-bold py-4 text-xl border border-white/50 px-8 rounded-xl   hover:bg-purple-700 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+              className="  bg-black text-[#02B51F] font-bold py-4 text-xl border border-white/50 p-6 md:px-8 rounded-xl   hover:bg-white transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
             >
               Get Resume
             </a>
+            <a
+              href="#projects"
+
+
+              rel="noopener noreferrer"
+              className="  bg-black text-[#02B51F] font-bold py-4 text-xl border border-white/50 p-6 md:px-8  rounded-xl   hover:bg-white transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+            >
+              My Work            </a>
+            <a
+              href="#contacts"
+              rel="noopener noreferrer"
+              className="  bg-black text-[#02B51F] font-bold py-4 text-xl border border-white/50 p-6 md:px-8  rounded-xl   hover:bg-white transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+            >
+             Contact          
+               </a>
+
+               <div className='flex gap-3 items-center justify-center md:mt-[40px] md:gap-10'>
+               <a
+                href="https://www.linkedin.com/in/shubham-thakur-b511032b5"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="text-blue-300 text-4xl hover:text-blue-500 transition duration-300" />
+              </a>
+              <a
+                href="https://github.com/shubhamThakur79"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="text-white text-4xl hover:text-gray-400 transition duration-300" />
+              </a>
+              <a
+                href="https://x.com/i/flow/login?redirect_after_login=%2FShubham20448922"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTwitter className="text-blue-400 text-4xl hover:text-blue-600 transition duration-300" />
+              </a>
+               </div>
           </motion.div>
         </div>
         <div className="hidden lg:block w-full lg:w-1/2">
-  <div className="flex justify-center">
-    <div className="relative w-[300px] h-[300px] overflow-hidden shadow-lg transition-transform duration-300 transform scale-105"> {/* Default scaling */}
-      <motion.img
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="h-full w-full object-cover rounded-full transition-transform duration-300 scale-110" // Default scaling for image
-        src="/logo.png"
-        alt="Shubham's Logo"
-      />
-      {/* Gradient Border Effect */}
-      <div className="absolute inset-0 rounded-full border-5 border-transparent 
+          <div className="flex justify-center">
+            <div className="relative w-[300px] h-[300px] overflow-hidden shadow-lg transition-transform duration-300 transform scale-105"> {/* Default scaling */}
+              <motion.img
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 1 }}
+                className="h-full w-full object-cover rounded-full transition-transform duration-300 scale-110" // Default scaling for image
+                src="/logo.png"
+                alt="Shubham's Logo"
+              />
+              {/* Gradient Border Effect */}
+              <div className="absolute inset-0 rounded-full border-5 border-transparent 
                       bg-gradient-to-br     opacity-10"></div>
-      {/* Dynamic Glowing Effect */}
-      <div className="absolute inset-0 rounded-full border-4 border-white rotate-180 opacity-40 
+              {/* Dynamic Glowing Effect */}
+              <div className="absolute inset-0 rounded-full border-4 border-white rotate-180 opacity-40 
                       transition duration-300 scale-105 animate-pulse"></div>
-    </div>
-  </div>
-</div>
+            </div>
+          </div>
+        </div>
 
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>

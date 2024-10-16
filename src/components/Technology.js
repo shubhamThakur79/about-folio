@@ -35,9 +35,9 @@ const skills = [
 
 const Technology = () => {
   return (
-    <div className="relative bg-gray-500/10 md:bg-transparent pt-5 pb-28">
+    <div className="relative bg-[#080808] pt-5 pb-28">
       {/* Interactive Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 opacity-30 z-0 animate-pulse"></div>
+      <div className="absolute inset-0 bg-[#080808] opacity-30 z-0 animate-pulse"></div>
 
       <motion.h1
         whileInView={{ opacity: 1, y: 0, rotate: [-5, 0] }}
