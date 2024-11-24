@@ -41,14 +41,14 @@ const Contact = () => {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 1.2 }}
-        className="bg-[#080808] py-20 md:px-5"
+        className="bg-[#080808] py-20 md:px-5 "
       >
         {/* Section Title */}
         <motion.h1
           whileInView={{ opacity: 1, y: 0, rotate: [-5, 0] }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 1.5 }}
-          className="relative z-10 mb-12 text-center text-4xl md:text-5xl text-white font-extrabold"
+          className="relative z-10 mb-1 text-center text-4xl md:text-5xl text-white font-extrabold"
         >
           Get In <span className="text-yellow-300">Touch</span>
         </motion.h1>
@@ -61,26 +61,28 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1.5 }}
-            className="md:w-1/2 flex flex-col justify-center items-center gap-5 py-10"
+            className="md:w-1/2 relative   flex flex-col justify-center items-center gap-2 py-4"
           >
-            <div className="flex gap-6 items-center">
+            <img className="h-full w-full md:block hidden" src="https://img.freepik.com/premium-vector/handset-made-from-points-lines-dark-blue-background-call-wireframe-mesh-polygonal_9385-152.jpg?ga=GA1.1.785720697.1706798610&semt=ais_hybrid" alt="" />
+            <img className="h-[90%] w-full  block md:hidden" src="https://img.freepik.com/premium-vector/contact-us-customer-support-hotline-connect_387612-858.jpg?ga=GA1.1.785720697.1706798610&semt=ais_hybrid" alt="" />
+            <div className="flex absolute gap-6 items-center ">
               <a
                 className="flex gap-4 items-center text-xl md:text-2xl underline text-yellow-300"
                 href="mailto:shubhamthakurbh1@gmail.com"
               >
-                <AiOutlineMail className="text-red-500 text-3xl" />
+                <AiOutlineMail className="md:text-red-500 text-white text-3xl" />
                 Send Mail
               </a>
               <a
                 className="flex gap-4 items-center text-xl md:text-2xl underline text-yellow-300"
                 href="tel:7876314359"
               >
-                <FaPhoneVolume className="text-green-400 text-3xl" />
+                <FaPhoneVolume className="md:text-green-400 text-white text-3xl" />
                 7876314359
               </a>
             </div>
 
-            <div className="flex gap-5 items-center justify-center">
+            <div className="flex absolute mt-24 gap-5 items-center justify-center">
               <a
                 href="https://www.linkedin.com/in/shubham-thakur-b511032b5"
                 target="_blank"
@@ -112,8 +114,8 @@ const Contact = () => {
             transition={{ duration: 1.5 }}
             className="md:w-1/2 w-full flex justify-center items-center"
           >
-            <div className="bg-black/10 backdrop-blur-md rounded-lg shadow-lg md:p-8 p-0 w-[95%] md:w-full">
-              <h2 className="text-2xl font-semibold text-gray-100 mb-4">Contact Us</h2>
+            <div className="bg-black/10 backdrop-blur-md rounded-lg shadow-lg md:p-8 p-0 w-[95%] md:w-full ">
+              <h2 className="text-2xl font-semibold text-gray-100 mb-4 text-center md:text-start my-2">Contact Us</h2>
               <form onSubmit={onSubmit}>
                 <div className="mb-4">
                   <label className="block text-gray-200 mb-1" htmlFor="name">Your Name</label>
@@ -159,13 +161,13 @@ const Contact = () => {
       </motion.div>
 
       {/* Footer Section */}
-      <footer className="bg-black text-gray-200 py-10">
+      <footer className="bg-black text-gray-200 py-4">
         <div className="text-center">
           <p className="text-lg">© 2024 Shubham Thakur. All Rights Reserved.</p>
           <div className="flex justify-center space-x-4 mt-2">
             <a href="#projects" className="text-yellow-300 hover:text-yellow-500 transition duration-300">Projects</a>
             <a href="#technologies" className="text-yellow-300 hover:text-yellow-500 transition duration-300">Technologies</a>
-            <a href="#contact" className="text-yellow-300 hover:text-yellow-500 transition duration-300">Contact</a>
+            <a href="tel:7876314359" className="text-yellow-300 hover:text-yellow-500 transition duration-300">Contact</a>
           </div>
         </div>
       </footer>

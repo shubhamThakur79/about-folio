@@ -24,8 +24,8 @@ const App = () => {
       <div className="bg-gray-900 text-white/70 overflow-hidden md:bg-transparent md:text-black">
         <Navbar />
         <Hero />
-        <Projects/>
         <About/>
+        <Projects/>
         <Technology/>
         <Contact/>
 

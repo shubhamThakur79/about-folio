@@ -35,7 +35,7 @@ const skills = [
 
 const Technology = () => {
   return (
-    <div className="relative bg-[#080808] pt-5 pb-28">
+    <div id='technologies' className="relative bg-[#080808] pt-5 pb-28">
       {/* Interactive Background */}
       <div className="absolute inset-0 bg-[#080808] opacity-30 z-0 animate-pulse"></div>
 

@@ -42,13 +42,13 @@ const Hero = () => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="relative bg-transparent m-auto w-64 h-64 md:w-80 md:h-80 overflow-hidden shadow-lg transition-transform duration-300 transform scale-105 block md:hidden flex justify-center mt-24 z-10"
+        className="relative   bg-transparent m-auto w-64 h-64 md:w-80 md:h-80 overflow-hidden shadow-lg transition-transform duration-300 transform scale-105 block md:hidden flex justify-center mt-28 z-10"
       >
         <motion.img
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="h-full w-full object-cover rounded-full transition-transform duration-300 scale-110" // Default scaling for image
+          className="h-full w-full object-cover rounded-full transition-transform duration-300 scale-110" 
           src="/logo.png"
           alt="Shubham's Logo"
         />
@@ -60,7 +60,7 @@ const Hero = () => {
                   transition duration-300 scale-105 animate-pulse"></div>
       </motion.div>
 
-      <div className="relative m-auto z-10 flex flex-col lg:flex-row items-center justify-between min-h-screen text-white px-4 md:px-8 lg:px-16 py-12">
+      <div className="relative md:mt-20 m-auto z-10 flex flex-col lg:flex-row items-center justify-between min-h-screen text-white px-4 md:px-8 lg:px-16 py-12">
         <div className="w-full lg:w-1/2 flex flex-col items-start lg:items-start text-center lg:text-left mb-12 lg:mb-0">
           <motion.h1
             initial={{ opacity: 0, y: -50 }}
@@ -90,7 +90,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className='md:mt-5 mt-10 flex gap-7 flex-wrap justify-center md:justify-start'
+            className='md:mt-5 mt-10 flex gap-5 flex-wrap justify-around items-center bg-white/10 py-6 rounded-lg  md:w-[70%] md:justify-around'
           >
             <a
               href={resume}
@@ -116,7 +116,7 @@ const Hero = () => {
              Contact          
                </a>
 
-               <div className='flex gap-3 items-center justify-center md:mt-[40px] md:gap-10'>
+               <div className='flex gap-3 items-center justify-center  md:gap-10'>
                <a
                 href="https://www.linkedin.com/in/shubham-thakur-b511032b5"
                 target="_blank"
